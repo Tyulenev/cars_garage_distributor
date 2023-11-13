@@ -1,11 +1,17 @@
 #DB Connect
 spring:
+  liquibase:
+    enabled: true
+    default-schema: public
+    change-log: classpath:db/changelog/db.changelog-master.yaml
   datasource:
     url: jdbc:postgresql://localhost:5432/carsTest?useSSL=false
     username: postgres
     password: postgres
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
 
 #Server config
 server:

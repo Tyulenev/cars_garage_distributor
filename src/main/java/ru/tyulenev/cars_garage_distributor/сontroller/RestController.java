@@ -31,7 +31,7 @@ public class RestController {
     }
 
     @PostMapping("/car")
-    public Car addNewCar(@RequestBody Car carForSave) throws CarDataNotValidException {
+    public Car addNewCar(@RequestBody Car carForSave) {
             return  carsGarageService.saveCar(carForSave);
     }
 

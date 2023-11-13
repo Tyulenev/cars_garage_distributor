@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: Alexey Tyulenev
+      changes:
+        - createTable:
+            tableName: car
+            columns:
+              - column:
+                  name: id
+                  type: INT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: driver_name
+                  type: TEXT
+              - column:
+                  name: brand
+                  type: TEXT
+              - column:
+                  name: garage_id
+                  type: INT
+                  constraints:
+                    foreignKeyName: garage_id_fk
+                    referencedTableName: garage
+                    referencedColumnNames: id

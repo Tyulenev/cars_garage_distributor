@@ -4,7 +4,6 @@ import lombok.Data;
 import org.intellij.lang.annotations.RegExp;
 
 import javax.persistence.*;
-import javax.validation.constraints.Pattern;
 
 @Entity (name = "Car")
 @Data
