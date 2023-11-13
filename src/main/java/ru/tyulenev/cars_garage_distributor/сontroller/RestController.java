@@ -9,7 +9,6 @@ import ru.tyulenev.cars_garage_distributor.model.entity.Car;
 import ru.tyulenev.cars_garage_distributor.model.entity.Garage;
 import ru.tyulenev.cars_garage_distributor.service.CarsGarageService;
 import ru.tyulenev.cars_garage_distributor.model.dto.GarageWithCarsForTransfer;
-import ru.tyulenev.cars_garage_distributor.validators.CarValidator;
 
 
 import java.util.List;
@@ -32,17 +31,8 @@ public class RestController {
     }
 
     @PostMapping("/car")
-//    public void addNewCar(@Valid @RequestBody Car carForSave) throws BusinessException {
     public void addNewCar(@RequestBody Car carForSave) throws CarDataNotValidException {
-//        CarValidator carValidator = new CarValidator(carForSave);
-//        carValidator.validate();
-        new CarValidator(carForSave).validate();
-        try{
             carsGarageService.saveCar(carForSave);
-        } catch (DataIntegrityViolationException e) {
-            throw new CarDataNotValidException("123");
-        }
-
     }
 
     @GetMapping("/garage")

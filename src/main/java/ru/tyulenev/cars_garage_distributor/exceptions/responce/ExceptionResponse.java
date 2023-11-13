@@ -1,4 +1,4 @@
-package ru.tyulenev.cars_garage_distributor.exceptions;
+package ru.tyulenev.cars_garage_distributor.exceptions.responce;
 
 public class ExceptionResponse {
 
