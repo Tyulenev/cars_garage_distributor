@@ -1,0 +1,19 @@
+#DB Connect
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/carsTest?useSSL=false
+    username: postgres
+    password: postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+#Server config
+server:
+  port: 8080
+  servlet:
+    context-path: /muon-task
+
+#Params
+app:
+  params:
+    maxCarsInGarage: 5
