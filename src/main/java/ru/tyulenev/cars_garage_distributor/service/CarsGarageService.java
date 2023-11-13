@@ -10,11 +10,11 @@ public interface CarsGarageService {
 //    Cars
     public List<Car> getAllCars();
     public Car getCarById(Long id);
-    public void saveCar(Car carForSave);
+    public Car saveCar(Car carForSave);
 
 //    Garages
     public List<Garage> getAllGarages();
     public GarageWithCarsForTransfer getGarageByIdWithCars(Long id);
-    public void saveGarage(Garage garageForSave);
+    public Garage saveGarage(Garage garageForSave);
 
 }

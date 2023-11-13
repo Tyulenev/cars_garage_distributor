@@ -32,8 +32,9 @@ public class CarsGarageServiceImpl implements CarsGarageService{
     }
 
     @Override
-    public void saveCar(Car carForSave) {
-        carRepository.save(carForSave);
+    public Car saveCar(Car carForSave) {
+       Car savedCar = carRepository.save(carForSave);
+        return savedCar = carRepository.save(carForSave);
     }
 
 //    Garage
@@ -57,8 +58,8 @@ public class CarsGarageServiceImpl implements CarsGarageService{
     }
 
     @Override
-    public void saveGarage(Garage garageForSave) {
-        garageRepository.save(garageForSave);
+    public Garage saveGarage(Garage garageForSave) {
+        return garageRepository.save(garageForSave);
     }
 
 

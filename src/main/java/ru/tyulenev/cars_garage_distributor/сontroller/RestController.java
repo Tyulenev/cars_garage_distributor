@@ -31,8 +31,8 @@ public class RestController {
     }
 
     @PostMapping("/car")
-    public void addNewCar(@RequestBody Car carForSave) throws CarDataNotValidException {
-            carsGarageService.saveCar(carForSave);
+    public Car addNewCar(@RequestBody Car carForSave) throws CarDataNotValidException {
+            return  carsGarageService.saveCar(carForSave);
     }
 
     @GetMapping("/garage")
@@ -46,8 +46,8 @@ public class RestController {
     }
 
     @PostMapping("/garage")
-    public void addNewGarage(@RequestBody Garage garageForSave) {
-        carsGarageService.saveGarage(garageForSave);
+    public Garage addNewGarage(@RequestBody Garage garageForSave) {
+        return carsGarageService.saveGarage(garageForSave);
     }
 
 //    @ExceptionHandler(MethodArgumentNotValidException.class)
