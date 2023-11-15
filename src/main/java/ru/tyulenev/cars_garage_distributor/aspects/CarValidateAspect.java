@@ -32,7 +32,8 @@ public class CarValidateAspect {
     @Before("ru.tyulenev.cars_garage_distributor.aspects.CustomPointcuts.addCarMethod()")
     public void beforeCarAddCheckBrandAndDrNameIsLetter(JoinPoint joinPoint)
         throws CarDataNotValidException {
-    final String regExp = "^[a-zA-Z]*$"; //Только буквы латиница
+    final String regExp = "^[A-zА-я]*$"; //Кирилица + латиница
+//    final String regExp = "^[a-zA-Z]*$"; //Только буквы латиница
     Object[] arguments = joinPoint.getArgs();
     for (Object obj : arguments) {
         if (obj instanceof Car) {
